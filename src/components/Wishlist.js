@@ -13,6 +13,7 @@ const Wishlist = () => {
     const{favoriteBooks,likedBooks,handleImgClickWishlist,handleHeartClick}=useContext(BookContext)
     console.log(favoriteBooks)
 
+
     return (
         <>
             {

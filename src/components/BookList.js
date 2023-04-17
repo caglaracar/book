@@ -3,7 +3,6 @@ import {searchBooks} from "../services/BookService";
 import '../App.css';
 import {motion } from 'framer-motion';
 import Book from "./Book";
-import LoadingBar from "./LoadingBar";
 import Search from '../assets/search.png'
 
 const BookList = () => {
@@ -43,6 +42,7 @@ const BookList = () => {
     const handleChange = (e) => {
         setValue(e.target.value);
     };
+
     return (
         <>
             <div>
@@ -59,7 +59,7 @@ const BookList = () => {
 
             </div>
             {isLoading ? (
-                    <LoadingBar/>
+               ""
                 ) : !books || books.length === 0 ? (
                     ""
                 ) : (

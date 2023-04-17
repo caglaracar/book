@@ -31,10 +31,10 @@ export const MainLayout = () => {
                 </div>
                 <nav>
                     <div className="menu">
-                        <NavLink to={"/"} activeClassName="active">
+                        <NavLink to={"/"} activeclassname ="active">
                             Home
                         </NavLink>
-                        <NavLink to={"/wishlist"} activeClassName="active">
+                        <NavLink to={"/wishlist"} activeclassname ="active">
                             Wishlist
                         </NavLink>
                     </div>

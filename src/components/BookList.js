@@ -23,6 +23,7 @@ const BookList = () => {
         if (books.length > 0) {
             setIsLoading(false);
         }
+
         if (books.length > 0 && searchBooks) { // sadece arama yapıldığında ve kitaplar yüklendiğinde kaydırma yap
             setTimeout(() => {
                 window.scrollTo({

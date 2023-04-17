@@ -12,7 +12,6 @@ const BookList = () => {
     const [value, setValue] = useState("");
     const handleOnSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const searchingBooks = await searchBooks(value);
             setBooks(searchingBooks.items);

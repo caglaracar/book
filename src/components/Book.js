@@ -98,6 +98,7 @@ const Book = ({books}) => {
                                 <motion.img
                                     src={selectedBook?.volumeInfo.imageLinks?.thumbnail}
                                     alt=""
+                                    className={"mobile-hidden"}
                                     style={{
                                         marginRight: "1rem",
                                         objectFit: "cover",

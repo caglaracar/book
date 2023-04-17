@@ -27,14 +27,19 @@ const BookContextProvider = ({children}) => {
         const win = window.open(url, '_blank');
     }
     useEffect(() => {
-        localStorage.setItem("favoriteBooks", JSON.stringify(favoriteBooks));
-    }, [favoriteBooks]);
-    useEffect(() => {
         const storedFavoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks"));
-        if (storedFavoriteBooks) {
+        if (storedFavoriteBooks && storedFavoriteBooks.length > 0) {
             setFavoriteBooks(storedFavoriteBooks);
+            setLikedBooks(storedFavoriteBooks.map(book => book.id));
         }
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem("favoriteBooks", JSON.stringify(favoriteBooks));
+    }, [favoriteBooks]);
+
+
+
     return (
         <BookContext.Provider value={{handleImgClickWishlist,favoriteBooks,setFavoriteBooks,selectedBook,setSelectedBook,likedBooks,setLikedBooks,showModal, setShowModal,handleImgClick,handleHeartClick}}>
             {children}

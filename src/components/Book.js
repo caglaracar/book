@@ -179,7 +179,6 @@ const Book = ({books}) => {
                     </motion.div>
                 )}
             </AnimatePresence>
-
         </>
     );
 };

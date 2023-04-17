@@ -14,11 +14,16 @@ const BookList = () => {
         e.preventDefault();
         try {
             const searchingBooks = await searchBooks(value);
-            setBooks(searchingBooks.items);
+            if (searchingBooks.items && searchingBooks.items.length > 0) {
+                setBooks(searchingBooks.items);
+            } else {
+                setBooks([]);
+                alert("Aradığınız kriterde kitap bulunamadı")
+            }
         } catch (error) {
             console.error(error);
         }
-    }
+    };
     useEffect(() => {
         if (books.length > 0) {
             setIsLoading(false);

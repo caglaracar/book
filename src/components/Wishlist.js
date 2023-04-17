@@ -9,11 +9,7 @@ import { FiPlus } from 'react-icons/fi';
 
 const Wishlist = () => {
     const navigate = useNavigate();
-
     const{favoriteBooks,likedBooks,handleImgClickWishlist,handleHeartClick}=useContext(BookContext)
-    console.log(favoriteBooks)
-
-
     return (
         <>
             {
@@ -63,7 +59,6 @@ const Wishlist = () => {
                     </div>
                 )
             }
-
         </>
     );
 };

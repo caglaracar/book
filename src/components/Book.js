@@ -88,7 +88,7 @@ const Book = ({books}) => {
                                             fontWeight: "bold",
                                             color: "#333",
                                             marginBottom: "0.5rem"
-                                        }}>Description</h4>:""
+                                        }}>Description</h4>: ""
                                     }
                                     <div>
                                         <div>

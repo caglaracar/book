@@ -19,6 +19,7 @@ const BookList = () => {
             } else {
                 setBooks([]);
                 alert("Aradığınız kriterde kitap bulunamadı")
+                setValue("")
             }
         } catch (error) {
             console.error(error);

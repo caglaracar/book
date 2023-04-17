@@ -7,6 +7,7 @@ import {BookContext} from "../context/BookContext";
 
 const Book = ({books}) => {
     const{selectedBook,likedBooks,showModal, setShowModal,handleImgClick,handleHeartClick}=useContext(BookContext)
+    console.log(selectedBook)
     return (
         <>
             <div className="flex-container" style={{marginTop: "1rem"}}>
@@ -73,47 +74,22 @@ const Book = ({books}) => {
             </div>
             <AnimatePresence>
                 {showModal && (
-                    <motion.div
-                        layout
-                        initial={{opacity: 0}}
-                        animate={{opacity: 1}}
-                        exit={{opacity: 0}}
-                        className={"modal-overlay"}
-                        onClick={() => setShowModal(false)}
-                    >
-                        <motion.div
-                            layout
-                            initial={{opacity: 0, y: -50}}
-                            animate={{opacity: 1, y: 0}}
-                            exit={{opacity: 0, y: -50}}
-                            className={"modal-container "}
-                            onClick={(e) => e.stopPropagation()}
-                        >
+                    <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className={"modal-overlay"} onClick={() => setShowModal(false)}>
+                        <motion.div layout initial={{opacity: 0, y: -50}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -50}} className={"modal-container "} onClick={(e) => e.stopPropagation()}>
 
                             <h2 className={"modal-container-h2"}>
                                 {selectedBook?.volumeInfo.title}
                             </h2>
-
                             <div style={{display: "flex", marginBottom: "1rem"}}>
-                                <motion.img
-                                    src={selectedBook?.volumeInfo.imageLinks?.thumbnail}
-                                    alt=""
-                                    className={"mobile-hidden"}
-                                    style={{
-                                        marginRight: "1rem",
-                                        objectFit: "cover",
-                                        width: "180px",
-                                        height: "270px",
-                                        boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)"
-                                    }}
-                                />
+                                <motion.img src={selectedBook?.volumeInfo.imageLinks?.thumbnail} alt="" className={"mobile-hidden"} style={{marginRight: "1rem", objectFit: "cover", width: "180px", height: "270px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)"}}/>
                                 <div>
-                                    <h4 style={{
-                                        fontWeight: "bold",
-                                        color: "#333",
-                                        marginBottom: "0.5rem"
-                                    }}>Description</h4>
-
+                                    {
+                                        selectedBook?.volumeInfo.description?<h4 style={{
+                                            fontWeight: "bold",
+                                            color: "#333",
+                                            marginBottom: "0.5rem"
+                                        }}>Description</h4>:""
+                                    }
                                     <div>
                                         <div>
                                         <p style={{fontSize: "1.2rem", marginBottom: "1rem", color: "#555"}}>

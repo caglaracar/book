@@ -138,7 +138,7 @@ const Book = ({books}) => {
                                         <p style={{fontSize: "1.2rem", color: "#555"}}><strong>Publication
                                             date:</strong> {selectedBook?.volumeInfo.publishedDate}</p>
                                             <img
-                                                onClick={(e) => handleHeartClick(e, selectedBook.id)}
+                                                onClick={(e) => handleHeartClick(e, selectedBook.id,selectedBook)}
                                                 src={heartIcon}
                                                 alt="heart icon"
                                                 style={{
